@@ -1,1 +1,13 @@
-<mxfile host="app.diagrams.net" modified="2021-10-29T20:11:56.244Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36 Edg/95.0.1020.30" version="15.6.2" etag="_YYCyDDx8tWps2rPNc-r" type="github"><diagram id="sxGs8JS06TNlae320o2O">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-10-29T20:22:57.017Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36 Edg/95.0.1020.30" etag="e06aTe2imuqQoLg6qzgO" version="15.6.2" type="github">
+  <diagram id="sxGs8JS06TNlae320o2O" name="Page-1">
+    <mxGraphModel dx="1108" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Veq8PSNwPxQLd4R2d88g-1" value="USUARIO" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="310" y="150" width="200" height="200" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
