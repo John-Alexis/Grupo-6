@@ -7,19 +7,97 @@
     <title>Intro vuejs</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> <!--escript para desarrollo-->
     <script src="./components/message.js"></script>
+    <script src="./components/computed.js"></script>
+    <script src="./components/methods.js"></script>
+    <script src="./components/vmodel.js"></script>
+    <script src="./components/propsandemmit.js"></script>
+    <script src="./components/child-data.js"></script>
+    <script src="./components/parent-data.js"></script>
+    <script src="./components/conditionals.js"></script>
+    <script src="./components/layout.js"></script>
+    <script src="./components/watcher.js"></script>
+    <script src="./directives/focus.js"></script>
+    <script src="./directives/change-style.js"></script>
+    <script src="./components/load-dynamic.js"></script>
+    <script src="./components/dynamic-comp/comp1.js"></script>
+    <script src="./components/dynamic-comp/comp2.js"></script>
+    <script src="./components/dynamic-comp/comp3.js"></script>
 </head>
 <body>
     <h1>Intro vuejs</h1>
     <div id ="app">
-        <message>
-
-        </message>
+        <message v-change-style="{backgroundColor: '#000', textColor : '#fff'}">        </message>
+        <computed>        </computed>
+        <methods>        </methods>
+        <vmodel></vmodel>
+        <!--Acá se llaman las variables del padre y se usan en el hijo  propsandemmit.js-->
+        <propsandemmit
+        :options="optionsEnabled"
+        @save-date="saveInDb"
+        >
+        </propsandemmit>
+        <child-data ref="child"> </child-data>
+        <p>{{bandera}}</p>
+        <parent-data ></parent-data>
+        <conditionals></conditionals>
+        <layout>
+            <h4>Este es el contenido general del layout</h4>
+            <template slot="header">
+                <nav>
+                    <ul>
+                        <li>Botón menú 1</li>
+                        <li>Botón menú 2</li>
+                        <li>Botón menú 3</li>
+                    </ul>
+                </nav>
+            </template>
+            <message></message>
+        </layout>
+        <watcher> </watcher>
+        <load-dynamic></load-dynamic>
 
     </div>
     <!--Se inicializa vue-->
     <script>
         new Vue({
         el: '#app',
+        data(){
+            return{
+                optionsEnabled:[
+                    {
+                    id:1,
+                    str:"Option 1"
+                    },
+                    {
+                    id:2,
+                    str:"Option 2"
+                    },
+                    {
+                    id:3,
+                    str:"Option 3"
+                    },
+            ],
+            textoParent: "Esto es texto del componente padre",
+            bandera:""
+            }
+        },
+        methods:{
+            saveInDb(optionId){
+                console.log("Guardando en base de datos: ",optionId);
+            }
+        },
+        mounted(){
+            console.log("Los componentes hijos fueron montados al DOM virtual");
+            console.log(this.$refs.child.message);
+
+            this.bandera = this.$refs.child.message;
+
+            // setTimeout(() =>{
+            //     this.$refs.child.showAlert();
+
+            // },2000)
+        }
+
        
 })
     </script>
